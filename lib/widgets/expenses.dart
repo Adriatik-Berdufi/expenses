@@ -37,9 +37,31 @@ class _ExpensesState extends State<Expenses> {
       category: Category.travel,
     ),
   ];
+  void _openModalInput() {
+    showModalBottomSheet(
+      context: context,
+      builder: (ctx) => const Text('MOdal bottom sheet'),
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        title: const Align(
+          alignment: Alignment.centerLeft,
+          child: Text(
+            style: TextStyle(color: Color.fromARGB(255, 8, 149, 214)),
+            'Expense Tracker',
+          ),
+        ),
+        actions: [
+          IconButton(
+            onPressed: _openModalInput,
+            icon: const Icon(Icons.add),
+          )
+        ],
+      ),
       body: Column(
         children: [
           const Text('chart'),
