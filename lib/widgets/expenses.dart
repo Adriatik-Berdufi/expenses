@@ -91,7 +91,6 @@ class _ExpensesState extends State<Expenses> {
         title: const Align(
           alignment: Alignment.centerLeft,
           child: Text(
-            style: TextStyle(color: Color.fromARGB(255, 8, 149, 214)),
             'Expense Tracker',
           ),
         ),

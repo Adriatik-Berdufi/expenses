@@ -143,12 +143,7 @@ class _NewExpense extends State<NewExpense> {
               ),
               const Spacer(),
               ElevatedButton(
-                  onPressed: _submitExpenseData,
-                  child: const Text(
-                      style: TextStyle(
-                        color: Color.fromARGB(255, 3, 104, 255),
-                      ),
-                      'Save')),
+                  onPressed: _submitExpenseData, child: const Text('Save')),
               const SizedBox(width: 18),
               ElevatedButton(
                   onPressed: () {
