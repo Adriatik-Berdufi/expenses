@@ -3,10 +3,43 @@ import 'package:expenses/widgets/expenses.dart';
 
 var kColorScheme =
     ColorScheme.fromSeed(seedColor: const Color.fromARGB(255, 0, 208, 255));
-
+var darkColor = ColorScheme.fromSeed(
+    seedColor: const Color.fromARGB(255, 0, 1, 50),
+    brightness: Brightness.dark);
 void main() {
   runApp(
     MaterialApp(
+      darkTheme: ThemeData.dark().copyWith(
+        colorScheme: darkColor,
+        cardTheme: CardTheme(
+          color: darkColor.secondaryContainer,
+          margin: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
+          shadowColor: Colors.white,
+          elevation: 1,
+        ),
+        iconTheme: IconThemeData(
+          color: darkColor.primary,
+        ),
+        textTheme: TextTheme(
+          titleLarge: TextStyle(
+            fontWeight: FontWeight.bold,
+            color: darkColor.onPrimaryContainer,
+            fontSize: 16,
+          ),
+          bodyLarge: TextStyle(color: darkColor.onPrimaryContainer),
+          bodyMedium: TextStyle(color: darkColor.onPrimaryContainer),
+          headlineLarge: TextStyle(color: darkColor.primary),
+        ),
+        elevatedButtonTheme: ElevatedButtonThemeData(
+          style: ElevatedButton.styleFrom(
+              backgroundColor: darkColor.primaryContainer,
+              shadowColor: Colors.white,
+              elevation: 1,
+              textStyle: const TextStyle(
+                fontSize: 16,
+              )),
+        ),
+      ),
       theme: ThemeData().copyWith(
         colorScheme: kColorScheme,
         iconTheme: IconThemeData(
@@ -14,9 +47,9 @@ void main() {
         ),
         textTheme: TextTheme(
           titleLarge: TextStyle(
-            fontWeight: FontWeight.normal,
+            fontWeight: FontWeight.bold,
             color: kColorScheme.onPrimaryContainer,
-            fontSize: 18,
+            fontSize: 16,
           ),
           bodyLarge: TextStyle(color: kColorScheme.onPrimaryContainer),
           bodyMedium: TextStyle(color: kColorScheme.onPrimaryContainer),
@@ -41,6 +74,7 @@ void main() {
               )),
         ),
       ),
+      themeMode: ThemeMode.system,
       home: const Expenses(),
     ),
   );
